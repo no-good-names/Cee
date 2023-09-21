@@ -1,15 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int choice(int x, int a, int b);
+#include "equ.h"
+#include "events.h"
+#include "main_type.h"
 
 int main(void) {
-  int x = 0;
-  int a = 0;
-  int b = 0;
-  scanf("%d", &x);
-  scanf("%d", &a);
-  scanf("%d", &b);
-  choice(x, a, b);
+  choices c;
+  boolean quit = false;
+  while (!quit) {
+    eventHandler(&c);
+    if (c == 0) {
+      printf("throw: %d\n", add(12, 12));
+    } else if (c == 1) {
+      printf("throw: %d\n", sub(12, 12));
+    } else {
+      break;
+    }
+  }
   return EXIT_SUCCESS;
 }

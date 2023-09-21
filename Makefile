@@ -4,12 +4,14 @@ BUILD_DIR= bin
 
 .PHONY: all clean run
 
+OBJS= $(SRC_DIR)/main.c
+
 all: $(BUILD_DIR)/main
 
 $(BUILD_DIR)/main: $(SRC_DIR)/main.c
 	@echo "Building..."
 	@mkdir -p $(BUILD_DIR)
-	@$(CC) $(SRC_DIR)/*.c -o $(BUILD_DIR)/main
+	@$(CC) $(OBJS) -o $(BUILD_DIR)/main
 	@echo "Building finished."
 
 clean:
