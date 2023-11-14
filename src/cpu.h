@@ -12,7 +12,8 @@ typedef struct {
 #define ROM_START 0x1
 #define ROM_END 0xF
 
-void cpu_init();
-void cpu_print_registers();
+void cpu_init(void);
+void cpu_print_registers(void);
 
 #endif /* CPU_H_ */
+

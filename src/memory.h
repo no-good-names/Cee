@@ -9,6 +9,7 @@ typedef struct {
     uint8_t memory[MEMORY_SIZE];
 } Memory_t;
 
-void memory_init();
+void memory_init(void);
 
 #endif /* MEMORY_H_ */
+
