@@ -58,3 +58,6 @@ bin/
 .replit
 replit.nix
 .ccls-cache/
+
+.vscode/
+.idea/

@@ -1,22 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "equ.h"
-#include "events.h"
-#include "main_type.h"
+#include "cpu.h"
+#include "memory.h"
 
-int main(void) {
-  choices c;
-  boolean quit = false;
-  while (!quit) {
-    eventHandler(&c);
-    if (c == 0) {
-      printf("throw: %d\n", add(12, 12));
-    } else if (c == 1) {
-      printf("throw: %d\n", sub(12, 12));
-    } else {
-      break;
-    }
+int main(int argc, char* argv[]) {
+  if (argc != 2) {
+    printf("Usage: %s <rom>\n", argv[0]);
+    return EXIT_FAILURE;
   }
+
+  memory_init();
+  cpu_init();
+  cpu_print_registers();
+
   return EXIT_SUCCESS;
 }
