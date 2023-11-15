@@ -13,13 +13,12 @@
 #include "utils.h"
 
 int main(int argc, char* argv[]) {
-  if(argc != 2) {
-    print_error("Usage: <ROM>");
-  }
+	if(argc != 2) {
 
-  memory_init();
-  cpu_init();
+	}
+	memory_init();
+	cpu_init();
 
-  return EXIT_SUCCESS;
+	return EXIT_SUCCESS;
 }
 
