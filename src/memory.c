@@ -2,11 +2,9 @@
 
 #include "memory.h"
 
-Memory_t Memory;
-
-void memory_init(void) {
-    for(int i = 0; i < MEMORY_SIZE; i++) {
-        Memory.memory[i] = 0;
+void initMem(Memory *memory) {
+    for (int i = 0; i < MEMORY_SIZE; i++) {
+        memory->memory[i] = 0;
     }
 }
 

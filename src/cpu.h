@@ -2,18 +2,18 @@
 #define CPU_H_
 
 #include <stdint.h>
-
 #include "memory.h"
 
 typedef struct {
   uint8_t registers[16];
-} Cpu_t;
+  uint8_t pc;
+} CPU;
 
-#define ROM_START 0x1
-#define ROM_END 0xF
+#define ROM_START 0x200
 
-void cpu_init(void);
-void cpu_print_registers(void);
+void initCPU(CPU *cpu);
+void loadProgram(CPU *cpu, Memory *memory, int *program, int programSize);
+void executeInstruction(CPU *cpu);
 
 #endif /* CPU_H_ */
 

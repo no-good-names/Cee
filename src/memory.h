@@ -1,15 +1,15 @@
 #ifndef MEMORY_H_
 #define MEMORY_H_
 
-#define MEMORY_SIZE 4096
-
 #include <stdint.h>
 
-typedef struct {
-    uint8_t memory[MEMORY_SIZE];
-} Memory_t;
+#define MEMORY_SIZE 4096
 
-void memory_init(void);
+typedef struct {
+    uint8_t memory[MEMORY_SIZE]; // 4KB of memory
+} Memory;
+
+void initMem(Memory *memory);
 
 #endif /* MEMORY_H_ */
 

@@ -3,17 +3,15 @@
 #include "cpu.h"
 #include "memory.h"
 
-Cpu_t Cpu;
-
-void cpu_init(void) {
-    for(int i = 0; i < ROM_END; i++) {
-        Cpu.registers[i] = 0;
+void initCPU(CPU *cpu) {
+    for(int i = 0; i < 16; i++) {
+        cpu->registers[i] = 0;
+    }
+    cpu->pc = 0;
+}
+void loadProg(CPU *cpu, Memory *memory, int *program, int programSize) {
+    for(int i = 0; i < programSize; i++) {
+        memory->memory[ROM_START + i] = program[i];
     }
 }
-
-void cpu_print_registers(void) {
-    for(int i = 0; i < ROM_END; i++) {
-        printf("V%X: %X\n", i, Cpu.registers[i]);
-    }
-}
-
+void executeInst(CPU *cpu);
