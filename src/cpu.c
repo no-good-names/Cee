@@ -14,4 +14,6 @@ void loadProg(CPU *cpu, Memory *memory, int *program, int programSize) {
         memory->memory[ROM_START + i] = program[i];
     }
 }
-void executeInst(CPU *cpu);
+void executeInst(CPU *cpu) {
+    
+}

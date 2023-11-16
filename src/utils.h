@@ -4,13 +4,7 @@
 #include <stdio.h>
 
 #define MAX_SIZE 100
-#define ASSERT(condition, message) \
-    do { \
-        if (!(condition)) { \
-            fprintf(stderr, "%s:%d: %s\n", __FILE__, __LINE__, message); \
-            exit(EXIT_FAILURE); \
-        } \
-    } while (0
+#define ASSERT(condition, message) if (!(condition)) { fprintf(stderr, "%s\n", message); exit(1); }
 
 void print_array(int *array, int size);
 void swap(int *a, int *b);
